@@ -10,6 +10,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
+@CrossOrigin(origins = "*") 
 public class ChatController {
  private final ChatService chatService;
  private final ConsultaRepository consultaRepository;
