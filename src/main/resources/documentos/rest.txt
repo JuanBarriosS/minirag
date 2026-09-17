@@ -1,0 +1,61 @@
+REST Y HTTP
+
+REST significa Representational State Transfer.
+
+REST es un estilo arquitectónico utilizado para diseñar servicios web
+que se comunican mediante el protocolo HTTP.
+
+Una API que sigue los principios REST se conoce como API RESTful.
+
+HTTP es el protocolo de comunicación utilizado en la web para el
+intercambio de mensajes entre un cliente y un servidor.
+
+Los principales métodos HTTP utilizados en una API REST son GET, POST,
+PUT y DELETE.
+
+El método GET se utiliza para consultar u obtener información sin
+modificar el estado del servidor.
+
+El método POST se utiliza para crear un nuevo recurso en el servidor.
+
+El método PUT se utiliza para actualizar completamente un recurso
+existente.
+
+El método DELETE se utiliza para eliminar un recurso existente.
+
+Cada recurso en una API REST se identifica mediante una URL, también
+llamada endpoint.
+
+Las respuestas HTTP incluyen un código de estado que indica el
+resultado de la operación.
+
+El código 200 indica que la solicitud fue exitosa.
+
+El código 201 indica que un recurso fue creado correctamente.
+
+El código 400 indica que la solicitud tiene un error por parte del
+cliente.
+
+El código 404 indica que el recurso solicitado no fue encontrado.
+
+El código 500 indica un error interno del servidor.
+
+JSON es un formato de texto ligero utilizado comúnmente para
+intercambiar datos entre un cliente y un servidor en aplicaciones
+REST.
+
+JSON significa JavaScript Object Notation.
+
+Una API REST puede recibir datos en formato JSON dentro del cuerpo de
+una solicitud HTTP, conocido como body o payload.
+
+REST se considera un protocolo sin estado, lo que significa que cada
+solicitud del cliente debe contener toda la información necesaria
+para ser procesada, sin depender de solicitudes anteriores.
+
+En Spring Boot, una API REST se implementa comúnmente utilizando la
+anotación @RestController.
+
+Las rutas de una API REST en Spring Boot pueden definirse mediante
+anotaciones como @GetMapping, @PostMapping, @PutMapping y
+@DeleteMapping.
