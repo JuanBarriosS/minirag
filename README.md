@@ -27,26 +27,30 @@ MiniRAG Académico permite hacer preguntas sobre un conjunto de documentos (Spri
 
 El proyecto implementa el patrón **RAG (Retrieval-Augmented Generation)**: antes de responder, el sistema busca los fragmentos de texto más relevantes para la pregunta y se los entrega al modelo como contexto, en lugar de dejarlo responder solo con su conocimiento general.
 
-┌─────────────┐ POST /api/chat ┌──────────────────┐
-│ Frontend │ ───────────────────────▶ │ ChatController │
-│ HTML/CSS/JS │ └────────┬──────────┘
-└─────────────┘ │
-▼
-┌──────────────────┐
-│ ChatService │
-│ (QuestionAnswer │
-│ Advisor) │
-└────────┬──────────┘
-┌──────────────┴──────────────┐
-▼ ▼
-┌────────────────────┐ ┌──────────────────┐
-│ VectorStore │ │ Groq │
-│ (SimpleVectorStore) │ │ GPT-OSS-20B │
-│ Búsqueda semántica │ │ Modelo generativo │
-└──────────┬──────────┘ └──────────────────┘
-▼
-Fragmentos relevantes
-(documentos .txt → chunks → embeddings)
+```
+┌─────────────┐      POST /api/chat      ┌──────────────────┐
+│  Frontend    │ ───────────────────────▶ │  ChatController   │
+│ HTML/CSS/JS  │                          └────────┬──────────┘
+└─────────────┘                                    │
+                                                     ▼
+                                          ┌──────────────────┐
+                                          │   ChatService     │
+                                          │ (QuestionAnswer   │
+                                          │    Advisor)        │
+                                          └────────┬──────────┘
+                                     ┌──────────────┴──────────────┐
+                                     ▼                              ▼
+                          ┌────────────────────┐        ┌──────────────────┐
+                          │   VectorStore       │        │       Groq        │
+                          │ (SimpleVectorStore)  │        │   GPT-OSS-20B      │
+                          │  Búsqueda semántica  │        │  Modelo generativo │
+                          └──────────┬──────────┘        └──────────────────┘
+
+                                                     ▼
+                                            Fragmentos relevantes
+                                  (documentos .txt → chunks → embeddings)
+```
+  
 
 
 ### Flujo de una pregunta
