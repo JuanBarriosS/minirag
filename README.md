@@ -80,7 +80,7 @@ El proyecto implementa el patrón **RAG (Retrieval-Augmented Generation)**: ante
 ---
 
 ## 📂 Estructura del proyecto
-
+```
 minirag/
 ├── src/main/java/com/tecnologico/minirag/
 │ ├── config/AiConfig.java # Configuración del VectorStore
@@ -95,7 +95,7 @@ minirag/
 │ ├── application.properties
 │ └── static/ # Frontend
 └── pom.xml
-
+```
 
 ---
 
